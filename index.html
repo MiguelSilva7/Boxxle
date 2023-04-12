@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="./style.css">
+    <title>Boxxle.io</title>
+</head>
+<body>
+    <!-- Titre -->
+    <div class="containertitle flex">
+        <div class="title">
+            <div class="controls flex">
+                <img src="assets/volume haut.png" alt="" id="volume">
+            </div>
+            <div class="test">SUPER MARIO BOXXLE <span>⭐</span></div>
+        </div> 
+    </div>
+
+    
+    <!-- Jeu -->
+    <div class="flex game">
+        <!-- Game -->
+        <div id="gameboard">
+            <!-- Game inside here -->
+        </div>
+        <!-- Stats -->
+        <div class="containerstats">
+            <div class="containerTitleStats flex">GAMEPLAY</div>
+            <div class="containerTitleStats flex">
+                <button class="resetButton flex" id="resetButton">RESET</button>
+            </div>
+            <div class="containerTitleStats level flex">LEVEL : 0 / 5</div>
+            <div class="containerTitleStats attemptLevel flex">ATTEMPT LEVEL : 0</div>
+            <div class="containerTitleStats attemptTotal flex">ATTEMPT TOTAL : 0</div>
+        </div>
+    </div>
+
+    <audio loop id="mariosong">
+        <source src="audio/mario-kart.mp3" type="audio/mp3">
+    </audio>
+    
+    <script>
+        let msong = document.getElementById("mariosong")
+        let volume = document.getElementById("volume")
+    
+        volume.onclick = function(){
+           if (msong.paused) {
+            msong.play();
+            volume.src = "assets/volume bas.jpg"
+           } else {
+            msong.pause();
+            volume.src = "assets/volume haut.png"
+           }
+        }
+    </script>
+
+    <script type= "module" src="./index.js"></script>
+</body>
+</html>
